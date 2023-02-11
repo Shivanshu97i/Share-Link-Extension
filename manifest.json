@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "QR Code Generator",
+    "description": "Generates QR code for the active tab",
+    "version": "1.0",
+    "author": "Meliodas",
+    "content_scripts": [
+        {
+            "matches":[
+                "*://*/*"
+            ],
+            "js": ["content.js"]
+        }
+    ],
+    "action": {
+		"default_icon": "icon.png",
+        "default_popup": "popup.html",
+        "default_title": "QR Code Generator"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "permissions": [
+        "activeTab",
+		"scripting",
+        "storage"
+    ]
+}
